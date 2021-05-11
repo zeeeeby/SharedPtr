@@ -49,7 +49,7 @@ SharedPtr& SharedPtr::operator=(const SharedPtr& other) {
 void SharedPtr::reset() {
     --*_count;
     if (!*_count) {
-        delete _ptr;
+        delete[] _ptr;
         delete _count;
     }
     _ptr = _count = nullptr;
